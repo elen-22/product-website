@@ -1,3 +1,7 @@
+const mainBody = document.querySelector(".mainBody");
+const numberOfProducts = document.querySelector("#numberOfProducts")
+
+
 class Product {
     constructor(name, price, image, description) {
         this.name = name;
@@ -14,10 +18,10 @@ class ShoppingCart {
     }
 
     add(product) {
-        const existing = this.items.find(item => item.product.name === product.name);
+         const existing = this.items.find(item => item.product.name === product.name);
         this.count++
         if (existing) {
-            existing.quantity += 1;
+            existing.quantity++;
         } else {
             this.items.push({ product, quantity: 1 });
         }
@@ -34,9 +38,9 @@ class ShoppingCart {
             return;
         }
 
-        this.items.forEach(({ product, quantity }) => {
+        this.items.forEach((el) => {
             const li = document.createElement("li");
-            li.innerHTML = `<strong>${product.name}</strong> — $${product.price} × ${quantity}`;
+            li.innerHTML = `<strong>${el.product.name}</strong> — $${el.product.price} × ${el.quantity}`;
             cartItems.appendChild(li);
         });
     }
@@ -49,12 +53,12 @@ const productList = [
     new Product("Bookshelf", 200, "./img/bookshelf.jpg", "This is a really good bookshelf"),
     new Product("Table", 120, "./img/table.png", "This is a really good table"),
     new Product("Chair", 80, "./img/chair.jpg", "This is a really good chair"),
-    new Product("Bookshelf", 200, "./img/bookshelf.jpg", "This is a really good bookshelf"), new Product("Table", 120, "./img/table.png", "This is a really good table"),
+    new Product("Bookshelf", 200, "./img/bookshelf.jpg", "This is a really good bookshelf"), 
+    new Product("Table", 120, "./img/table.png", "This is a really good table"),
     new Product("Chair", 80, "./img/chair.jpg", "This is a really good chair"),
 ];
 
-const mainBody = document.querySelector(".mainBody");
-const numberOfProducts = document.querySelector("#numberOfProducts")
+
 const cart = new ShoppingCart();
 
 function displayProducts() {

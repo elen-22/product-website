@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Website</title>
     <link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
     <header>
         <h1>Product Website</h1>
         <div class="burger">&#9776;</div>
-        <div class="shoppingCard">&#128722; <span id="numberOfProducts">0</span></div>
+        <div class="shoppingCard">
+            <span>
+                &#128722;
+            </span>
+            <span id="numberOfProducts">0</span>
+        </div>
+
     </header>
 
     <div class="container">
@@ -77,11 +85,11 @@
     <!-- new -->
     <div id="cartModal" class="modal">
         <div class="modalContent">
-          <span class="closeBtn">&times;</span>
-          <h2>Your Cart</h2>
-          <ul id="cartItems"></ul>
+            <span class="closeBtn">&times;</span>
+            <h2>Your Cart</h2>
+            <ul id="cartItems"></ul>
         </div>
-      </div>
+    </div>
 
     <footer class="footer">
         <p>© 2025 Product website. All rights reserved.</p>
@@ -90,4 +98,5 @@
 
     <script src="./script.js"></script>
 </body>
+
 </html>
