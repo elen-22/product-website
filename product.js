@@ -1,5 +1,11 @@
 const mainBody = document.querySelector(".mainBody");
 const numberOfProducts = document.querySelector("#numberOfProducts")
+const burger = document.querySelector(".burger");
+const menu = document.querySelector(".menu");
+
+const modal = document.querySelector("#cartModal");
+const cartIcon = document.querySelector(".shoppingCard");
+const closeBtn = document.querySelector(".closeBtn");
 
 
 class Product {
@@ -19,13 +25,18 @@ class ShoppingCart {
 
     add(product) {
          const existing = this.items.find(item => item.product.name === product.name);
+         console.log(existing)
         this.count++
         if (existing) {
             existing.quantity++;
         } else {
             this.items.push({ product, quantity: 1 });
+           
+            
         }
+        console.log(this.items)
         // this.animateCart();
+        
         this.renderCart();
     }
 
@@ -70,6 +81,7 @@ function displayProducts() {
             <img src="${product.image}" alt="${product.name}">
             <h3>${product.name}</h3>
             <p>${product.description}</p>
+            <p>$${product.price}</p>
             <button>Add to cart</button>
         `;
         
@@ -77,6 +89,7 @@ function displayProducts() {
         button.addEventListener('click', () => {
             alert(`${product.name} added successfully`)
             cart.add(product);
+            numberOfProducts.style.display="block"
             numberOfProducts.textContent++
         });
 
@@ -86,17 +99,13 @@ function displayProducts() {
 
 
 //this we had
-const burger = document.querySelector(".burger");
-const menu = document.querySelector(".menu");
+
 
 burger.addEventListener('click', () => {
     menu.classList.toggle('active');
 });
 
 
-const modal = document.querySelector("#cartModal");
-const cartIcon = document.querySelector(".shoppingCard");
-const closeBtn = document.querySelector(".closeBtn");
 
 cartIcon.addEventListener("click", () => {
     modal.style.display = "block";

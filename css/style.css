@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 
@@ -29,6 +30,7 @@ header {
 
 /* new */
 #numberOfProducts {
+    display: none;
     position: absolute;
     top: 3px;
     right: -8px;
@@ -42,12 +44,22 @@ header {
 
 .container {
     display: flex;
+    /* new */
+    min-height: 100vh;
 }
 
 .menu {
     background-color: burlywood;
     /* padding: 20px; */
-    padding-left:10px;
+    padding-left: 10px;
+    width: 200px;
+    /* new stying to strech the height of menu */
+    align-items: stretch;
+    min-height: 100vh;
+}
+
+/* new */
+.menu li {
     width: 200px;
 }
 
@@ -61,10 +73,10 @@ ul {
     text-decoration: none;
     color: white;
     font-weight: bold;
-    font-size:20px;
+    font-size: 20px;
 }
 
- li:hover {
+li:hover {
     background-color: lightgray;
     width: 100%;
     cursor: pointer;
@@ -86,7 +98,6 @@ ul {
     flex-basis: 200px;
     text-align: center;
     margin: 10px;
-
 }
 
 img {
@@ -95,7 +106,8 @@ img {
     border-radius: 4px;
 }
 
-button {
+/* new: added here .mainBody for not to refer another buttons */
+.mainBody button {
     background: tan;
     color: white;
     border: none;
@@ -103,9 +115,10 @@ button {
     border-radius: 10px;
     padding: 10px;
     margin-top: 8px;
+    cursor: pointer;
 }
 
-button:active {
+.mainBody button:active {
     transform: translateY(4px);
 }
 
@@ -120,6 +133,7 @@ button:active {
     color: white;
     text-align: center;
     padding: 10px 0;
+
 }
 
 
@@ -141,12 +155,13 @@ button:active {
         display: none;
     }
 
-     .menu.active {
+    .menu.active {
         display: block;
-        width: 100%; 
+        width: 100%;
         /* new and important, don't forget to say */
         box-sizing: border-box;
-     
+        min-height: 100px;
+
     }
 }
 
@@ -170,7 +185,7 @@ button:active {
     background-color: #fff;
     margin: 10% auto;
     padding: 20px;
-    width:50%;
+    width: 50%;
     /* max-width: 500px; */
     border-radius: 10px;
 }
@@ -192,3 +207,257 @@ button:active {
     border-bottom: 1px solid #ccc;
     padding: 10px 0;
 }
+
+
+
+
+/* Home page */
+
+.homeBody {
+    margin: 0 auto;
+}
+
+.homeTitle {
+    background-image: url("../img/main_image.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: black;
+    text-align: center;
+    padding:  20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    /* max-width: 1200px; */
+    /* min-width: 1050px;
+    max-width: 1050px; */
+}
+
+.homeTitle h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.homeTitle p {
+    font-size: 1.2rem;
+}
+
+.btn {
+    background-color: orange;
+    color: white;
+    padding: 10px 20px;
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 10px;
+    margin-top: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn:active {
+    transform: translateY(4px);
+}
+
+.btn:hover {
+    background-color: darkorange;
+}
+
+.small {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.featureBox {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background: #8d6e63;
+    color:white;
+    border-radius: 10px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.featureBox:hover,.aboutPreview:hover {
+    background-color: #3a1c12;
+    transform: scale(1.05);
+}
+
+.aboutPreview {
+    text-align: center;
+    margin: 20px auto;
+    width: 40%;
+    padding: 10px;
+    color:white;
+    border-radius: 10px;
+    background-color: #8d6e63;
+    transition: transform 0.3s;
+}
+
+
+.slider {
+    position: relative;
+    width: 100%;
+    margin: 30px auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slides {
+    display: flex;
+}
+
+.carousel-slide {
+    width: 100%;
+    position: relative;
+    display: none;
+}
+
+.activeSlide {
+    display: block;
+    animation: fade 1s;
+}
+
+
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.carousel-slide img {
+    width: 100%;
+    display: block;
+    height: 400px;
+}
+
+
+.carousel-buttons button {
+    position: absolute;
+    top: 50%;
+    font-size: 20px;
+    background-color: hsla(0, 0, 0, 0.0.5);
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 1s;
+    padding: 12px;
+}
+
+
+#prev {
+    left: 0;
+}
+
+#next {
+    right: 0;
+}
+
+.carousel-buttons button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+
+/* about page */
+.aboutBody {
+    margin: 0 auto;
+}
+
+.aboutTitle {
+/* margin:10px auto; */
+    background-color: #8d6e63;
+    color: white;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.aboutTitle h1 {
+    animation:typing 3.5s;
+}
+
+.aboutTitle p {
+    animation: typing 3.5s;
+}
+
+@keyframes typing {
+    from {
+        width: 40%;
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+.aboutUs{
+    width: 80%;
+    max-width: 900px;
+    margin:10px auto;
+    border: 2px solid #8d6e63;
+    border-radius: 5px;
+    padding: 5px;
+    box-shadow: 0 0 5px #6d4c41;
+    
+}
+.aboutUs h2, .whyChoose h2 {
+    color:#8d6e63;
+    padding: 10px;
+}
+
+
+#dots,
+#more {
+    display: inline;
+}
+#readMoreBtn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #6d4c41;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#readMoreBtn:active {
+    transform: translateY(3px);
+ }
+
+ .whyChoose {
+     padding: 40px 20px;
+     text-align: center;
+ }
+ .reasons {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 30px;
+     justify-content: center;
+     margin-top: 20px;
+ }
+ .reason{
+    background:#6d4c41;
+    color:white;
+        border-radius: 12px;
+        padding: 20px;
+        width: 200px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+ }
+
+ .reason:hover {
+     transform: translateY(-8px);
+ }
