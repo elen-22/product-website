@@ -1,17 +1,17 @@
 // const dots = document.querySelector("#dots");
-const moreText = document.querySelector("#more");
-const btn = document.querySelector("#readMoreBtn");
+// const moreText = document.querySelector("#more");
+// const btn = document.querySelector("#readMoreBtn");
 
-moreText.style.display = "none";
-
-btn.addEventListener("click", () => {
+more.style.display = "none";
+console.log(dots)
+readMoreBtn.addEventListener("click", () => {
     if (dots.style.display === "none") {
         dots.style.display = "inline";
-        moreText.style.display = "none";
-        btn.textContent = "Read More";
+        more.style.display = "none";
+        readMoreBtn.textContent = "Read More";
     } else {
         dots.style.display = "none";
-        moreText.style.display = "inline";
-        btn.textContent = "Read Less";
+        more.style.display = "block";
+        readMoreBtn.textContent = "Read Less";
     }
 });

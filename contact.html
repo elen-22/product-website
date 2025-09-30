@@ -4,8 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    
 </head>
 <body>
-    <h1>Contact</h1>
+    <header>
+        <h1>Contact Us</h1>
+        <div class="burger">&#9776;</div>
+    </header>
+    <div class="container">
+        <nav class="menu">
+            <ul>
+                <li><a href="./index.html" class="menuItem">Home</a></li>
+                <li><a href="./products.html" class="menuItem">Products</a></li>
+                <li><a href="./about.html" class="menuItem">About</a></li>
+                <li><a href="./contact.html" class="menuItem">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="contact_page">
+            <h1>Contact Us</h1>
+            <p>Have questions about our furniture? Reach out below!</p>
+            <form id="contactForm" action="https://formsubmit.co/elen.v.grigoryan@gmail.com" method="POST">
+                <!-- <input type="hidden" name="_next" value=""> -->
+                <div class="formGroup">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" placeholder="John Doe" required name="name">
+                    <div class="error" id="nameError">Please enter a valid name (letters only).</div>
+                </div>
+                <div class="formGroup">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    <div class="error" id="emailError">Please enter a valid email address.</div>
+                </div>
+                <div class="formGroup">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="+1 234 567 8901" name="phone" required>
+                    <div class="error" id="phoneError">Please enter a valid phone number.</div>
+                </div>
+                <div class="formGroup">
+                    <label for="message">Message</label>
+                    <textarea id="message" rows="5" placeholder="Your message here..." name="message" required></textarea>
+                    <div class="error" id="messageError">Message must be at least 10 characters.</div>
+                </div>
+                <button id="contactBtn">Send Message</button>
+                
+            </form>
+            <div id="thankYouSection" style="display:none;">
+                <div class="success-message">Thank you for contacting us! We'll get back to you soon.</div>
+                <button id="newMessageBtn">Send another message</button>
+            </div>
+        </div>
+        </div>
+
+        <script src="./common.js"></script>
+        <script src="./contact.js"></script>
 </body>
 </html>

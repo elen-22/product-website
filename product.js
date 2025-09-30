@@ -1,7 +1,7 @@
 const mainBody = document.querySelector(".mainBody");
 const numberOfProducts = document.querySelector("#numberOfProducts")
-const burger = document.querySelector(".burger");
-const menu = document.querySelector(".menu");
+// const burger = document.querySelector(".burger");
+// const menu = document.querySelector(".menu");
 
 const modal = document.querySelector("#cartModal");
 const cartIcon = document.querySelector(".shoppingCard");
@@ -82,7 +82,7 @@ function displayProducts() {
             <h3>${product.name}</h3>
             <p>${product.description}</p>
             <p>$${product.price}</p>
-            <button>Add to cart</button>
+            <button class="productBtn">Add to cart</button>
         `;
         
         const button = card.querySelector('button');
@@ -101,9 +101,9 @@ function displayProducts() {
 //this we had
 
 
-burger.addEventListener('click', () => {
-    menu.classList.toggle('active');
-});
+// burger.addEventListener('click', () => {
+//     menu.classList.toggle('active');
+// });
 
 
 
