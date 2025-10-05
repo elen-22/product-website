@@ -3,6 +3,16 @@
     padding: 0;
     box-sizing: border-box;
 }
+html,
+body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
 
 
 /* to have burger on the right side with space-between */
@@ -44,8 +54,8 @@ header {
 
 .container {
     display: flex;
-    /* new */
-    min-height: 100vh;
+    flex: 1;
+    height: auto;
 }
 
 .menu {
@@ -55,7 +65,8 @@ header {
     width: 200px;
     /* new stying to strech the height of menu */
     align-items: stretch;
-    min-height: 100vh;
+    /* min-height: 100dvh; */
+min-height: 100%;
 }
 
 /* new */
@@ -66,6 +77,9 @@ header {
 /* not to have dots */
 ul {
     list-style: none;
+    margin: 0;
+    padding: 0;
+
 }
 
 /*  not to have underline*/
@@ -146,7 +160,10 @@ img {
     color: white;
     text-align: center;
     padding: 10px 0;
-
+    /* margin-top: 10px; */
+    /* bottom: 0;
+    width: 100%;
+    position: fixed; */
 }
 
 
@@ -228,7 +245,7 @@ img {
 
 .homeBody {
     margin: 0 auto;
-    width: 80%;
+    width: 100%;
 }
 
 .homeTitle {
@@ -240,14 +257,15 @@ img {
     padding: 20px;
     border-radius: 10px;
     margin-top: 10px;
-    /* max-width: 1200px; */
-    /* min-width: 1050px;
+    min-height: 50vh;
+    /* max-width: 1200px; 
+    min-width: 1050px;
     max-width: 1050px; */
 }
 
 .homeTitle h2 {
-    font-size: 2rem;
-    width: 500px;
+    /* font-size: 30px; */
+    max-width: 500px;
     margin: 0 auto;
     margin-bottom: 10px;
     background-color: white;
@@ -258,7 +276,7 @@ img {
     font-size: 1.2rem;
     background-color: white;
     opacity: 0.8;
-    width: 600px;
+    max-width: 600px;
     margin: 10px auto;
 }
 
@@ -332,6 +350,7 @@ img {
     margin: 30px auto;
     overflow: hidden;
     border-radius: 10px;
+
 }
 
 /* .slides {
@@ -342,6 +361,7 @@ img {
     width: 100%;
     position: relative;
     display: none;
+    object-fit: contain;
 }
 
 .activeSlide {
@@ -363,7 +383,7 @@ img {
 .carousel-slide img {
     width: 100%;
     display: block;
-    height: 400px;
+    height: auto;
 }
 
 
@@ -523,7 +543,7 @@ img {
     margin: 10px auto;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
-    max-width: 500px;
+    max-width: 400px;
     width: 100%;
     text-align: center;
     padding: 20px;
@@ -565,7 +585,7 @@ textarea:focus {
 #contactBtn,
 #newMessageBtn {
     width: 60%;
-    margin-top: 10px;
+    /* margin-top: 2px; */
     padding: 10px 20px;
     background: #a9744f;
     color: white;
